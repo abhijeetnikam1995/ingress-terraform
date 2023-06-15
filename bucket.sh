@@ -26,5 +26,5 @@ aws dynamodb create-table \
 terraform -chdir=01-ekscluster-terraform-manifests/ init -reconfigure
 terraform -chdir=01-ekscluster-terraform-manifests/ apply --auto-approve
 terraform -chdir=02-lbc-install-terraform-manifests/ init -reconfigure
-terraform -chdir=02-lbc-install-terraform-manifests/ apply --auto-approv
+terraform -chdir=02-lbc-install-terraform-manifests/ apply --auto-approve
 aws eks --region us-east-1 update-kubeconfig --name hr-dev-eksdemo1
