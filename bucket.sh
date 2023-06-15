@@ -22,3 +22,8 @@ aws dynamodb create-table \
         AttributeName=LockID,KeyType=HASH \
     --provisioned-throughput \
         ReadCapacityUnits=10,WriteCapacityUnits=5
+
+terraform -chdir=01-ekscluster-terraform-manifests/ init -reconfigure
+terraform -chdir=01-ekscluster-terraform-manifests/ apply --auto-approve
+terraform -chdir=02-lbc-install-terraform-manifests/ init -reconfigure
+terraform -chdir=02-lbc-install-terraform-manifests/ apply --auto-approv
